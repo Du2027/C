@@ -19,6 +19,8 @@ int main(){
     //&& || ! and or not
     // bool result = (a < b)&&(a<c);
 
+    // ternary: (1=1) ? code_when_true : code_when_false;
+
     double Number_double = 12.35;
     printf("\n%.2lf",Number_double); //.2lf for 2 decimal points. standart = 6 decimals
     float Number_Float = 22.1f;
