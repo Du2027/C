@@ -1,16 +1,23 @@
 #include<stdio.h>
+#include<stdbool.h> // for using booleans
 int main(){
     int age = 20;
     printf("Age is %d", age);
     age = 21;
     printf("\nNew: Age %d", age);
 
+    // strings = char string1[] = "name"; %s
     /*
     int     4bytes  %d
     double  8bytes  %lf
     float   4bytes  %f
     char    1byte   %c
+    bool    1bit    %d   printf - 0 for false 1 for true stdbool.h required
     */
+    //double result = (int)a+b; a is converted to a int and then printed as an double
+    // <,>,==,!=,<=,>=
+    //&& || ! and or not
+    // bool result = (a < b)&&(a<c);
 
     double Number_double = 12.35;
     printf("\n%.2lf",Number_double); //.2lf for 2 decimal points. standart = 6 decimals
@@ -29,5 +36,15 @@ int main(){
     scanf("%d");
     //scanf("%d %c",var1,var2) also possible
 
+    if (1=1) && (1=1) || (1=2){
+        //code
+    }
+    else if (1=2){
+        //code2
+    }
+    else{
+        //code3
+    }
+    
     return 0;
 }
