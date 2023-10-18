@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include<ctype.h>
 int main(){
     char hello[] = "Hello World"; // actually creates a list with the characters
     char greetings[] = "Hello World!";
@@ -25,5 +26,10 @@ int main(){
     strcpy(result, "hello"); // assigns hello to result
 
     strcmp(result,hello) // returns -4 if strings are not equal and 0 if they are
+
+    char a = "a";       
+    char A = toupper(a);            // possiable because of the ctype.h header
+    char a = tolower(toupper(a));
+
     return 0;
 }
