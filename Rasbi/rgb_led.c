@@ -26,8 +26,10 @@ int main(){
         return 1;
     }
     Gpio_init(Gpio17,Gpio18,Gpio27);
-    colorset(10,0,0,1000);
-    colorset(0,255,0,1000);
-    colorset(0,0,255,1000);
+    int i;        
+    for(i=0;i<255;i++){
+        colorset(i,0,0,500);
+        colorset(i,i,i,500);
+    }
     return 0;
 }
