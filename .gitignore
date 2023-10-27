@@ -50,9 +50,3 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-Rasbi/LED_BAR
-Rasbi/RGB_LED
-
-Rasbi/SIMPLE_BUTTON
-.gitignore
-Rasbi/7SEGMENT_DISPLAY_EXAMPLE
