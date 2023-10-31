@@ -2,6 +2,7 @@
 #include<wiringPi.h>
 
 int main(){
+    int Timer = 200;
     if(wiringPiSetup()==-1){
         return -1;
     }
@@ -18,12 +19,23 @@ int main(){
         }
         digitalWrite(i,LOW);
     }
-    int num;
     while(1){
-        scanf("%d\n",&num);
-        digitalWrite(num, HIGH);
-        delay(1000);
-        digitalWrite(num, LOW);
+        for(i=0;i<9;i++){
+        if(i==7){
+            continue;
+        }
+        printf("%d\n",i);
+        digitalWrite(i, HIGH);
+        delay(Timer);
+        digitalWrite(i, LOW);
+        if(i==8){
+            for(i=8;i>-1;i--){
+                digitalWrite(i, HIGH);
+                delay(Timer);
+                digitalWrite(i, LOW);
+            }
+        }
+    }
     }
 
     return 0;
