@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<string.h>
 #include<wiringPi.h>
 
 int _do(int int1,int int2,int int3,int int4,int int5,int int6,int int7,int int8){
@@ -15,29 +16,53 @@ int _do(int int1,int int2,int int3,int int4,int int5,int int6,int int7,int int8)
         if (i==9){x=8;}
         
         digitalWrite(i, address[x]);
-        delay(1000);
     }
 }
 
 // work with argc and argv
-int main(){
+int main(int argc, char* argv[]){
+
+    if(argv[1]==NULL){
+        printf("No Argument given on Execution\n");
+        return -2;
+    }
+    
     if(wiringPiSetup()==-1){
         return -1;
         printf("Wiring Pi Setup failed\n");
     }
-
+    
     int i;
-    for(i=0;i<0;i++){
+    for(i=0;i<9;i++){
         if(i==7){
             continue;
         }
         pinMode(i,OUTPUT);
+        printf("OUTP : %d\n", i);
     }
 
-    char charak;
-    scanf("%d", &charak);
-    if(&charak == "A"){
-        _do(1,1,1,0,1,1,1,0);
+    long unsigned int longestword = 0;
+    for(i=1; i<argc;i++){
+        if(longestword < strlen(argv[i])){
+            longestword = strlen(argv[i]);
+        }
+    }
+    char word[longestword];
+
+    for(i=0; i<argc; i++){
+        printf("Command : %s\n",argv[i]);
+    }
+
+    for(i=1;i<argc;i++){
+        printf("TIme : %d\n",i);
+        strcpy(word, argv[i]);
+        printf("word = %s\n", word);
+
+        int chars_num[strlen(word)];
+        for(i = 0;i < strlen(word); i++){
+            chars_num[i] = (int) word[i];
+            printf("NUM = %d\n",chars_num[i]);
+        }
     }
 
     _do(0,0,0,0,0,0,0,0);
