@@ -17,6 +17,7 @@ int _do(int int1,int int2,int int3,int int4,int int5,int int6,int int7,int int8)
         
         digitalWrite(i, address[x]);
     }
+    delay(400);
 }
 
 // work with argc and argv
@@ -32,6 +33,7 @@ int main(int argc, char* argv[]){
         printf("Wiring Pi Setup failed\n");
     }
     
+    int n;
     int i;
     for(i=0;i<9;i++){
         if(i==7){
@@ -49,22 +51,25 @@ int main(int argc, char* argv[]){
     }
     char word[longestword];
 
-    for(i=0; i<argc; i++){
-        printf("Command : %s\n",argv[i]);
-    }
-
     for(i=1;i<argc;i++){
-        printf("TIme : %d\n",i);
         strcpy(word, argv[i]);
         printf("word = %s\n", word);
 
-        int chars_num[strlen(word)];
-        for(i = 0;i < strlen(word); i++){
-            chars_num[i] = (int) word[i];
-            printf("NUM = %d\n",chars_num[i]);
+        int chars_num[(int) strlen(word)*4];
+        for(n = 0;n <(int) strlen(word); n++){
+            chars_num[n] = (int) word[n];
+            printf("NUM = %d\n",chars_num[n]);
+        }
+        for(n = 0;n <(int) strlen(word); n++){
+            switch(chars_num[n]){
+                case 48:
+                    _do(1,1,1,1,1,1,0,0);
+                    break;
+                default:
+                    _do(0,0,0,0,0,0,0,0);
+                    break;
+            }
         }
     }
-
-    _do(0,0,0,0,0,0,0,0);
     return 0;
 }
