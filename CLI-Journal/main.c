@@ -1,16 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <sys/ioctl.h>
-
-
-//print a whole line full of the ascii letter
-void printf_wl(int columns,int ASCII_of_Letter){
-    int i;
-    for(i=0;i<=columns;i++){
-        printf("%c", ASCII_of_Letter);
-    }
-};
 
 int main(int argc,char* argv[]){
 
