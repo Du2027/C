@@ -1,5 +1,12 @@
-Line numbers
-Set a Todo to a specific Line number
 categorys (like Ferien: ) highlit with maybe Backround colors
-folders for like code or schoool
+
+-add category
+	Enter Category (dannach scanf(...)
+-rm category 
+
+bei list dann if(anfang ="CATEGORY" dann ignorieren)
+
 rename
+sync function
+
+

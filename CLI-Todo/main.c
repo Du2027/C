@@ -7,8 +7,16 @@ void list_Todos(FILE *entrys){
     printf("Todo's --------------------------\n");   
 
     char cont[100];
+    int line_num = 1;
     while(fgets(cont, 100, entrys)){
+        if(line_num >= 10){
+             printf("%d : ", line_num);
+        }
+        else {
+            printf("%d  : ", line_num);
+        }
         printf("%s", cont);
+        line_num++;
     } 
 }
 
