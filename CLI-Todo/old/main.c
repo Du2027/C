@@ -58,7 +58,7 @@ int main(int argc, char *argv[]){
     
     // Help command
     if(strcmp(argv[1], "-help") == 0){
-        printf("available commands : -help, -list, -add, -rm\n-help     -shows help for execution\n-list/-l  -shows Todo's\n-add xy   -adds xy as Todo\n-rm xy    -removes xy Todo (line)\n");
+        printf("available commands : -help, -list, -add, -rm, -rename\n-help       -shows help for execution\n-list/-l    -shows Todo's\n-add xy     -adds xy as Todo\n-rm xy      -removes xy Todo (line)\n-rename x y -renames line x to y\n");
         command = 0;
         fclose(entrys);
     }
@@ -126,6 +126,8 @@ int main(int argc, char *argv[]){
     
     // Attach a Category command
     if(strcmp(argv[1], "-attach_category") == 0){
+        printf("WIP\n");
+        return -1;
         command = 0;
         if(argc != 4){
             printf("Incorrect argument count\n");
@@ -234,6 +236,8 @@ int main(int argc, char *argv[]){
 
     // Detach command
     if(strcmp(argv[1], "-detach_category") == 0){
+        printf("WIP\n");
+        return -1;
         command = 0;
         
         fclose(entrys);
